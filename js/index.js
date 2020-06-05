@@ -1,3 +1,5 @@
+// store locator
+
 var map;
 var markers = [];
 var infoWindow;
@@ -13,6 +15,11 @@ function initMap() {
   infoWindow = new google.maps.InfoWindow();
   displayStores();
   showStoresMarkers();
+  setOnClickListener();
+}
+
+function setOnClickListner() {
+  var storeElements = document.querySelectorAll(".store-container");
 }
 function displayStores() {
   var storesHtml = "";
@@ -66,10 +73,16 @@ function createMarker(latlng, name, address, statusText, phone) {
         <div class = "store-info-status">
         ${statusText}
         </div>
-        <div = "store-info-address">
+        <div class = "store-info-address">
+        <div class="circle">
+          <i class="fas fa-location-arrow"></i>
+        </div>
           ${address}
         </div>
-        <div = class"store-info-phone">
+        <div class = "store-info-phone">
+        <div class="circle">
+          <i class="fas fa-phone-alt"></i>
+        </div>
          ${phone}
         </div>
       </div>
